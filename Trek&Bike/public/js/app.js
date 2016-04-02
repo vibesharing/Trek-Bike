@@ -1,14 +1,22 @@
 function config($routeProvider) {
 	$routeProvider
-		.when('/', {
-			templateUrl: 'views/main.html',
-			controller: 'mainController'
+		.when('/homepage', {
+			templateUrl: 'views/homepage.html'
 		})
-		.when('/about', {
-			templateUrl: 'views/about.html'
-		})
+		// .when('/trek', {
+		// 	templateUrl: 'views/trek.html',
+		// 	controller: trekController
+		// })
+		// .when('/weather', {
+		// 	templateUrl: 'views/trek.html',
+		// 	controller: weatherController
+		// })
+		// .when('/user', {
+		// 	templateUrl: 'views/user.html',
+		// 	controller: userController
+		// })
 		.otherwise({
-			redirectTo: '/'
+			redirectTo: '/homepage'
 		});
 }
 function run($rootScope, $location){
@@ -19,8 +27,13 @@ function run($rootScope, $location){
 }
 angular.module('app', ['ngRoute'])
     .config(config)
-    .controller('mainController', mainController)
-    .service('todoService', todoService)
+		// .controller('weatherController', weatherController)
+		// .controller('trekController', trekController)
+		// .controller('userController', userController)
+    // .service('weatherService', weatherService)
+		// .service('trekService', trekService)
+		// .service('userService', userService)
+
+
     /*.factory('', )*/
     .run(run);
-
