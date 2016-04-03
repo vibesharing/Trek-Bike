@@ -3,14 +3,14 @@ function config($routeProvider) {
 		.when('/homepage', {
 			templateUrl: 'views/homepage.html'
 		})
-		// .when('/trek', {
-		// 	templateUrl: 'views/trek.html',
-		// 	controller: trekController
-		// })
-		// .when('/weather', {
-		// 	templateUrl: 'views/trek.html',
-		// 	controller: weatherController
-		// })
+		.when('/trek', {
+			templateUrl: 'views/trek.html',
+			controller: trekController
+		})
+		.when('/weather', {
+			templateUrl: 'views/weather.html',
+			controller: weatherController
+		})
 		// .when('/user', {
 		// 	templateUrl: 'views/user.html',
 		// 	controller: userController
@@ -25,13 +25,13 @@ function run($rootScope, $location){
 		$rootScope.activetab = newVal;
 	});
 }
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute', 'ngMap'])
     .config(config)
-		// .controller('weatherController', weatherController)
-		// .controller('trekController', trekController)
+		.controller('weatherController', weatherController)
+		.controller('trekController', trekController)
 		// .controller('userController', userController)
-    // .service('weatherService', weatherService)
-		// .service('trekService', trekService)
+    .service('weatherService', weatherService)
+		.service('trekService', trekService)
 		// .service('userService', userService)
 
 

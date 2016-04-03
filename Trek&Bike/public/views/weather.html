@@ -1,23 +1,92 @@
-<h1>{{title}}</h1>
-<form class="form-inline">
-	<div class="form-group">
-		<input type="text" class="form-control" id="inputMessage" 
-			   placeholder="Your task" ng-model="description">
-	</div>
-	<button type="submit" class="btn btn-default" ng-click="add()">Add</button>
-</form>
+
+<div class="container">
+    <h1>Meteo <i class="fa fa-sun-o"></i>
+</h1>
+    <div class="row">
+    <div class="col-md-6">
+        <input type="text" class="form-control" id="usr" ng-model="city">
+
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-primary" ng-click="searchweather();searchforecast()">Chercher</button>
+    </div>
+    </div>
+
 <hr>
-<ul class="list-group">
-	<li class="list-group-item" ng-repeat="todo in todos">
-		<form class="form-inline">
-			<div class="form-group">
-				<input type="text" class="form-control" id="inputMessage" 
-					   ng-model="todo.description">
-			</div>
-			<div class="pull-right">
-				<button type="submit" class="btn btn-default" ng-click="update(todo)">Update</button>
-				<button type="submit" class="btn btn-danger" ng-click="delete(todo)">Delete</button>
-			</div>
-		</form>
-	</li>
-</ul>
+
+
+    <div class="row">
+        <h1>Meteo in {{weather.name}}</h1>
+        <div class="col-xs-6 col-md-3">
+
+            <div class="panel status panel-danger">
+                <div class="panel-heading">
+                    <h1 class="panel-title text-center">Now</h1>
+                </div>
+                <div class="panel-body">
+                    <strong>Temp: {{weather.main.temp}}°C</strong><br>
+                    <strong>Wind: {{weather.wind.speed}}</strong><br>
+                    <strong>Humidity: {{weather.main.humidity}}%</strong><br>
+                    <strong>Description: {{weather.weather[0].description}}.</strong><br>
+                    <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png" alt="" />
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6 col-md-3">
+
+            <div class="panel status panel-warning">
+                <div class="panel-heading">
+                    <h1 class="panel-title text-center">Tomorrow</h1>
+                </div>
+                <div class="panel-body">
+                    <strong>Temp: {{weathera.list[4].main.temp}}°C</strong><br>
+                    <strong>Wind: {{weathera.list[4].wind.speed}}</strong><br>
+                    <strong>Humidity: {{weathera.list[4].main.humidity}}%</strong><br>
+                    <strong>Description: {{weathera.list[4].weather[0].description}}.</strong><br>
+                    <img src="http://openweathermap.org/img/w/{{weathera.list[4].weather[0].icon}}.png" alt="" />
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6 col-md-3">
+
+            <div class="panel status panel-success">
+                <div class="panel-heading">
+                    <h1 class="panel-title text-center">D + 2</h1>
+                </div>
+                <div class="panel-body">
+                    <strong>Temp: {{weathera.list[9].main.temp}}°C</strong><br>
+                    <strong>Wind: {{weathera.list[9].wind.speed}}</strong><br>
+                    <strong>Humidity: {{weathera.list[9].main.humidity}}%</strong><br>
+                    <strong>Description: {{weathera.list[9].weather[0].description}}.</strong><br>
+                    <img src="http://openweathermap.org/img/w/{{weathera.list[9].weather[0].icon}}.png" alt="" />
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-xs-6 col-md-3">
+
+            <div class="panel status panel-info">
+                <div class="panel-heading">
+                    <h1 class="panel-title text-center">D + 3</h1>
+                </div>
+                <div class="panel-body">
+                    <strong>Temp: {{weathera.list[13].main.temp}}°C</strong><br>
+                    <strong>Wind: {{weathera.list[13].wind.speed}}</strong><br>
+                    <strong>Humidity: {{weathera.list[13].main.humidity}}%</strong><br>
+                    <strong>Description: {{weathera.list[13].weather[0].description}}.</strong><br>
+                    <img src="http://openweathermap.org/img/w/{{weathera.list[13].weather[0].icon}}.png" alt="" />
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

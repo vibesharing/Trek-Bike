@@ -1,5 +1,5 @@
 body{
-    padding-top: 70px;
+    padding-top: 50px;
 }
 .navbar-border{
 	border-bottom: 3px solid #F0DB4F;
@@ -9,4 +9,30 @@ body{
 }
 .navbar-header img:hover{
 	transform: rotate(360deg);
-}  
+}
+.container-fluid{
+	padding: 0px;
+
+}
+
+.navbar{
+	margin-bottom: 0px;
+}
+.map{
+  height: 100%;
+	border: 4px solid black;
+	border-radius: 5px;
+  max-width: 400px;
+	margin 0;
+	padding: 0;
+
+}
+.meteo{
+	height: 150%;
+	border: 4px solid black;
+	border-radius: 5px;
+	max-width: 400px;
+	margin 0;
+	padding: 0;
+
+}

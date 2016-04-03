@@ -1,17 +1,11 @@
 // Weather SERVICE
 function weatherService($http) {
     return {
-        get : function() {
-            return $http.get('/weathers');
+        geta : function(city) {
+            return $http.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=295594b2f0f74cb1eafdf26d818de19b"+"&units=metric");
         },
-        update : function(id, data){
-            return $http.put('/weathers/' + id, data);
-        },
-        create : function(data) {
-            return $http.post('/weathers', data);
-        },
-        delete : function(id) {
-            return $http.delete('/weathers/' + id);
+        getb : function(city) {
+            return $http.get("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&APPID=295594b2f0f74cb1eafdf26d818de19b"+"&units=metric");
         }
-    }
-};
+    };
+}

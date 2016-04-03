@@ -1,29 +1,20 @@
 // MAIN CONTROLLER
-function mainController($scope, $http, todoService) {
-	$scope.title = "Todo List";
-	
-	function load(){
-		todoService.get().then(function(res){
-			$scope.todos = res.data;
+function weatherController($scope, $http, weatherService) {
+
+	$scope.searchweather = function(){
+		weatherService.geta($scope.city).then(function(res){
+			$scope.weather = res.data;
+			console.log($scope.weather);
 		});
-	}
-	$scope.add = function(){
-		var data = {};
-		data.description = $scope.description;
-		todoService.create(data).then(function(res){
-			load();
+
+	};
+	$scope.searchforecast = function(){
+		weatherService.getb($scope.city).then(function(res){
+			$scope.weathera = res.data;
+			console.log($scope.weathera);
 		});
-		$scope.description = "";
-	}
-	$scope.update = function(todo){
-		todoService.update(todo._id, todo).then(function(res){
-			load();
-		});
-	}
-	$scope.delete = function(todo){
-		todoService.delete(todo._id).then(function(res){
-			load();
-		});
-	}
-	load();
+
+	};
+
+
 }
